@@ -1,0 +1,116 @@
+Zachery Abbas 
+1019463
+Assignment 2
+Due: Feb 10
+
+1.1) Program: P11.c
+    Using brute force algorithm based on the definition inversion.
+
+    The function will return the inversion and executions, then determine the effiency class
+
+    frist: put file into array, get length of the file, and create variables 
+
+    get length of array (text file)
+    put the text file into an array 
+    set inversion variable to zero 
+    
+    second: use double for loops and make sure in order to get the inversion array[i] > array[j]
+
+    for loop j < len of array, j++
+        for loop i = j+1, j< len of array, i++
+            if (array[i] >arr[j])
+                inversion ++
+                return inversion 
+    Conclusion: 
+           The time complexity is O(n^2) and on my hardware brute force completes in 4.9 seconds 
+
+
+1.2) Program P12.c 
+    Using divide and conquer algorithm I will be modifying the mergesort algorithmto count the number of inversions 
+
+    First: create a recursive function that sorts the file and returns number of inversions
+        this function will have array, buffer, left, annd right
+
+        divide the array into two parts 
+        if (left<right){
+            mid = left + right 
+            mid = mid/2
+        then get the inversion by getting the sum of right and left part by calling it recursevly 
+
+        then merge the two parts
+        }
+        return the inversion count 
+
+    Second: create a function that merges the sorted arrays and returns the inversions
+        this function will have array, buffer, middile, left, and right 
+
+        create indexs for middle, left and right
+         
+         in the loop 
+            if the array[left] = array[mid]
+                buffer[merged array++] = array[left++]
+            else 
+                buffer[merge array++]= arrary[mid++]
+                inversion = inversion + (mid-1)
+        
+        copy remianing elements of right array 
+        copy remaining elements of left array 
+
+        copy back the merged elements 
+        then return inversion 
+
+    Conclusion: 
+               The time complextiy is O(nlogn),and on my computer it completes before a time was clocked. (dont know if that is a problem or if thats just my computer)
+
+
+COMPARISON of 1.1 and 1.2: 
+
+    On my computer p11 which is the brute force method goes alot slower then 1.2 which is the divde and conquer method. 
+
+
+2.1) Program p21
+     In this program I will be developing a brute force algorithm based on convex hull. 
+
+     First I will use a double for loop for the two points and in the loop I will make sure that point one doesn't == point two
+
+        for point i 
+            for point j 
+                if point i != point j 
+                    get line segement for point i and j 
+    Second I will have another for loop that uses point f (farthest point) make sure it doesn't == point i or point j 
+        for point k 
+            if point f != point i and point j 
+                get line segment 
+    
+2.2) Program p22 
+     In this porgram I will be using divde and conquer method based on quick sort. 
+
+     There will be two functions one to fide the convex hull and one to sort the convecx hull 
+     This function will sort the conveex hull
+        find the far left and right point 
+        add the far left and right point to variable 
+        
+        then divide the rest of the points into two groups 
+            one gorup right side of a and b
+            two gorup is one left side of b to a 
+        then recursevly call the find convex hull fucntion 
+
+        This function will find the points for convex hull
+        create three variables 
+        one called inside 
+        two called rightx
+        three called righty 
+
+        inside is inside the triangle, outside rightx is points is outside of x to y, outside righty is outside y to x
+
+        call the function recursevly with rightx
+        call the functin recursevly with righty
+
+Conclusion: 
+    Program 2.1 isn't working becasue I am only having one array instead of two and I was unable to parse through the points without getting a seg fault this is the 
+    the same thing with the 2.2 unfortuanly so these two questions I was unable to finish correctly. But by knowlege of this course divide and conquor would have a
+    faster run time compared to brute force method. time complexity O(n^3) for brute force and O(nlogn).
+    
+
+
+    
